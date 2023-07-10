@@ -9,7 +9,7 @@ import FeaturesComplement from "../components/Features-2"
 import PricingComponent from "../components/Pricing"
 import TestimonialComponent from "../components/Testimonials"
 import FooterComponent from "../components/Footer"
-import {LayoutComponent} from "../components/Layout";
+
 
 
 

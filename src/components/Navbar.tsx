@@ -66,11 +66,11 @@ export default function Navbar() {
   return (
     <>
       <Box            
-       bg={useColorModeValue("gray.100", "gray.900")}            
-      //  position="fixed"
-      //  zIndex={9999}
-        // backgroundColor="rgba(255, 
-        //   255, 255, 0.8)" backdropFilter="saturate(180%) blur(5px)" 
+       //bg={useColorModeValue("gray.100", "gray.900")}               
+       bg={useColorModeValue("rgba(210, 217, 232, 0.8)", "rgba(19, 24, 33, 0.8)")}
+        //backgroundColor="rgba(255, 255, 255, 0.8)" 
+        //backgroundColor="rgba(210, 217, 232, 0.8)" 
+        backdropFilter="saturate(180%) blur(5px)" 
         py={7}
         px={{ base: 4, md: 20 }}
         fontSize={"lg"}        
