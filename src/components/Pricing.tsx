@@ -11,6 +11,7 @@ import {
   ListItem,
   ListIcon,
   Button,
+  Center,
 } from '@chakra-ui/react';
 import { FaCheckCircle } from 'react-icons/fa';
 
@@ -33,11 +34,10 @@ export default function PricingComponent() {
     <Box id='pricing' py={12}>
       <VStack spacing={2} textAlign="center">
         <Heading as="h1" fontSize="4xl">
-          Plans that fit your need
+          Planes que se ajustan a tu necesidad
         </Heading>
         <Text fontSize="lg" color={'gray.500'}>
-          Start with 14-day free trial. No credit card needed. Cancel at
-          anytime.
+          Contamos con tres opciones que seguro te interesaran.
         </Text>
       </VStack>
       <Stack
@@ -49,7 +49,7 @@ export default function PricingComponent() {
         <PriceWrapper>
           <Box py={4} px={12}>
             <Text fontWeight="500" fontSize="2xl">
-              Hobby
+              Plan Básico
             </Text>
             <HStack justifyContent="center">
               <Text fontSize="3xl" fontWeight="600">
@@ -59,7 +59,7 @@ export default function PricingComponent() {
                 79
               </Text>
               <Text fontSize="3xl" color="gray.500">
-                /month
+                /mensual
               </Text>
             </HStack>
           </Box>
@@ -70,28 +70,27 @@ export default function PricingComponent() {
             <List spacing={3} textAlign="start" px={12}>
               <ListItem>
                 <ListIcon as={FaCheckCircle} color="green.500" />
-                unlimited build minutes
+                Diseño de Placas
               </ListItem>
               <ListItem>
                 <ListIcon as={FaCheckCircle} color="green.500" />
-                Lorem, ipsum dolor.
-              </ListItem>
-              <ListItem>
-                <ListIcon as={FaCheckCircle} color="green.500" />
-                5TB Lorem, ipsum dolor.
-              </ListItem>
+                Posicionamiento
+              </ListItem>              
             </List>
             <Box w="80%" pt={7}>
-              <Button w="full" colorScheme="red" variant="outline">
-                Start trial
+              <Button position="revert-layer" w="full" colorScheme="red" variant="outline">
+                Iniciar Prueba
               </Button>
             </Box>
           </VStack>
         </PriceWrapper>
 
         <PriceWrapper>
-          <Box position="relative">
-            <Box
+           <Box 
+          // position="relative"
+          >
+            
+           {/* <Box
               position="absolute"
               top="-16px"
               left="50%"
@@ -105,12 +104,13 @@ export default function PricingComponent() {
                 fontSize="sm"
                 fontWeight="600"
                 rounded="xl">
-                Most Popular
+                Mas Popular
               </Text>
-            </Box>
+            </Box> */}
+            
             <Box py={4} px={12}>
               <Text fontWeight="500" fontSize="2xl">
-                Growth
+                Plan Medium
               </Text>
               <HStack justifyContent="center">
                 <Text fontSize="3xl" fontWeight="600">
@@ -120,7 +120,7 @@ export default function PricingComponent() {
                   149
                 </Text>
                 <Text fontSize="3xl" color="gray.500">
-                  /month
+                  /mensual
                 </Text>
               </HStack>
             </Box>
@@ -131,28 +131,20 @@ export default function PricingComponent() {
               <List spacing={3} textAlign="start" px={12}>
                 <ListItem>
                   <ListIcon as={FaCheckCircle} color="green.500" />
-                  unlimited build minutes
+                  Diseño de Placas (Historias y Feed)
                 </ListItem>
                 <ListItem>
                   <ListIcon as={FaCheckCircle} color="green.500" />
-                  Lorem, ipsum dolor.
+                  Posicionamiento
                 </ListItem>
                 <ListItem>
                   <ListIcon as={FaCheckCircle} color="green.500" />
-                  5TB Lorem, ipsum dolor.
-                </ListItem>
-                <ListItem>
-                  <ListIcon as={FaCheckCircle} color="green.500" />
-                  5TB Lorem, ipsum dolor.
-                </ListItem>
-                <ListItem>
-                  <ListIcon as={FaCheckCircle} color="green.500" />
-                  5TB Lorem, ipsum dolor.
-                </ListItem>
+                  Control y Mantenimiento
+                </ListItem>                        
               </List>
               <Box w="80%" pt={7}>
-                <Button w="full" colorScheme="red">
-                  Start trial
+                <Button position="revert-layer" w="full" colorScheme="red">
+                  Iniciar Prueba
                 </Button>
               </Box>
             </VStack>
@@ -161,7 +153,7 @@ export default function PricingComponent() {
         <PriceWrapper>
           <Box py={4} px={12}>
             <Text fontWeight="500" fontSize="2xl">
-              Scale
+              Plan Premium
             </Text>
             <HStack justifyContent="center">
               <Text fontSize="3xl" fontWeight="600">
@@ -171,7 +163,7 @@ export default function PricingComponent() {
                 349
               </Text>
               <Text fontSize="3xl" color="gray.500">
-                /month
+                /mensual
               </Text>
             </HStack>
           </Box>
@@ -182,20 +174,26 @@ export default function PricingComponent() {
             <List spacing={3} textAlign="start" px={12}>
               <ListItem>
                 <ListIcon as={FaCheckCircle} color="green.500" />
-                unlimited build minutes
+                Diseño de Placas
               </ListItem>
               <ListItem>
                 <ListIcon as={FaCheckCircle} color="green.500" />
-                Lorem, ipsum dolor.
+                Posicionamiento
               </ListItem>
               <ListItem>
                 <ListIcon as={FaCheckCircle} color="green.500" />
-                5TB Lorem, ipsum dolor.
+                Control y Mantenimiento
+              </ListItem>
+              <ListItem>
+                <ListIcon as={FaCheckCircle} color="green.500" />
+                Feedback
               </ListItem>
             </List>
-            <Box w="80%" pt={7}>
-              <Button w="full" colorScheme="red" variant="outline">
-                Start trial
+            <Box  w="80%" pt={7}>
+              <Button position="revert-layer" w="full"
+                  colorScheme="red"
+                  variant="outline">
+                Iniciar Prueba
               </Button>
             </Box>
           </VStack>

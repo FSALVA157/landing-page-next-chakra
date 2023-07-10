@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 import {
   Box,
   Flex,
@@ -16,32 +16,32 @@ import {
   useColorModeValue,
   Stack,
   useColorMode,
-  Spacer,
+  Spacer  
 } from "@chakra-ui/react";
-import { Link as ScrollLink}  from 'react-scroll';
+import { Link as ScrollLink } from "react-scroll";
 import { HamburgerIcon, CloseIcon, AddIcon } from "@chakra-ui/icons";
-import { BsSun, BsMoonStarsFill } from 'react-icons/bs';
+import { BsSun, BsMoonStarsFill } from "react-icons/bs";
 import Image from "next/image";
 
 //const Links = ["Inicio", "Servicios", "Precios", "Testimonios"];
-const Links= [
+const Links = [
   {
-    path: 'home',
-    label: 'Inicio',
+    path: "home",
+    label: "Inicio",
   },
   {
-    path: 'feature',
-    label: 'Servicios',
+    path: "feature",
+    label: "Servicios",
   },
   {
-    path: 'pricing',
-    label: 'Precios',
+    path: "pricing",
+    label: "Precios",
   },
   {
-    path: 'testimonial',
-    label: 'Testimonios',
+    path: "testimonial",
+    label: "Testimonios",
   },
-]
+];
 
 const NavLink = ({ children }: { children: ReactNode }) => (
   <Link
@@ -65,7 +65,16 @@ export default function Navbar() {
 
   return (
     <>
-      <Box bg={useColorModeValue("gray.100", "gray.900")} py={7}  px={{base: 4, md: 20}} fontSize={"lg"}>
+      <Box            
+       bg={useColorModeValue("gray.100", "gray.900")}            
+      //  position="fixed"
+      //  zIndex={9999}
+        // backgroundColor="rgba(255, 
+        //   255, 255, 0.8)" backdropFilter="saturate(180%) blur(5px)" 
+        py={7}
+        px={{ base: 4, md: 20 }}
+        fontSize={"lg"}        
+      >
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
             size={"md"}
@@ -76,32 +85,41 @@ export default function Navbar() {
           />
           <HStack spacing={8} alignItems={"center"}>
             <Box>
-              <Image src={colorMode === "light" ? "/assets/logo.svg" : "/assets/logo-blanco.png"} alt="logo" width={70} height={70}></Image>              
-              </Box>
-           
+              <Image
+                src={
+                  colorMode === "light"
+                    ? "/assets/logo.svg"
+                    : "/assets/logo-blanco.png"
+                }
+                alt="logo"
+                width={90}
+                height={90}
+              ></Image>
+            </Box>
           </HStack>
           <Flex>
-          <HStack
+            <HStack
               as={"nav"}
               spacing={4}
               display={{ base: "none", md: "flex" }}
             >
               {Links.map((link, i) => (
-                <>
-                {/* <NavLink key={link}>{link}</NavLink> */}
-                <ScrollLink
-                activeClass="active"
-                to={link.path}
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                key={i}
-              >
-                {link.label}
-              </ScrollLink>
-                <Spacer/>
-                </>
+                
+                  <React.Fragment key={link.label}>
+                  <ScrollLink
+                    activeClass="active"
+                    to={link.path}
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                    key={i}
+                  >
+                    {link.label}
+                  </ScrollLink>               
+                  <Spacer />
+                  </React.Fragment>
+                
               ))}
             </HStack>
           </Flex>
@@ -116,24 +134,28 @@ export default function Navbar() {
               bg={"transparent"}
               // {...props}
             >
-              {colorMode === "light" ? <BsMoonStarsFill color="black" /> : <BsSun color="white" />}
+              {colorMode === "light" ? (
+                <BsMoonStarsFill color="black" />
+              ) : (
+                <BsSun color="white" />
+              )}
             </Button>
             <Button
               variant={colorMode === "light" ? "outline" : "solid"}
               // colorScheme={'teal'}
               size={"lg"}
-              fontSize={'sm'}
-              color={'purple'}
-              rounded={'full'}                            
+              fontSize={"sm"}
+              color={"purple"}
+              rounded={"full"}
               _hover={{
-                bg: 'purple.500',
-                color: 'white',
+                bg: "purple.500",
+                color: "white",
               }}
               _focus={{
-                bg: 'purple.500',
-                color: 'white',
+                bg: "purple.500",
+                color: "white",
               }}
-              px={10}              
+              px={10}
             >
               Tomar Accion
             </Button>
@@ -165,22 +187,17 @@ export default function Navbar() {
         </Flex>
 
         {isOpen ? (
-          <Box pb={4} display={{ md: "none" }} >
+          <Box pb={4} display={{ md: "none" }}>
             <Stack as={"nav"} spacing={4}>
-            
               {Links.map((link) => (
                 <>
-                <NavLink key={link.label}>{link.label}</NavLink>
-            
+                  <NavLink key={link.label}>{link.label}</NavLink>
                 </>
               ))}
-            
             </Stack>
           </Box>
         ) : null}
       </Box>
-
-      
     </>
   );
 }

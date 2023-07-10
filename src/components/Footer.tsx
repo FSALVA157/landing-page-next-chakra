@@ -78,7 +78,7 @@ import {
           justify={{ base: 'center', md: 'space-between' }}
           align={{ base: 'center', md: 'center' }}>
           <Image src={colorMode === "light" ? "/assets/logo.svg" : "/assets/logo-blanco.png"} alt="logo" width={70} height={70}></Image>    
-          <Text>© 2022 Chakra Templates. All rights reserved</Text>
+          <Text>© 2023 cafe.studio todos los derechos reservados</Text>
           <Stack direction={'row'} spacing={6}>
             <SocialButton label={'Twitter'} href={'#'}>
               <FaTwitter />
